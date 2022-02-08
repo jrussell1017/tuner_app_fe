@@ -71,7 +71,7 @@ function SongEditForm() {
       <input
         id="time"
         type="text"
-        name="category"
+        name="time"
         value={song.time}
         placeholder="Runtime (in minutes)..."
         onChange={handleTextChange}
