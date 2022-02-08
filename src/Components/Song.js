@@ -10,16 +10,11 @@ function Song({ song }) {
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
       </td>
-
-     
       <td>{song.artist_name}</td>
-      
       <td>{song.album}</td>
-      
       <td>{song.time}</td>
-      
       <td>
-        <Link to={`/songs/${song.id}`}>✏️</Link>
+        <Link to={`/songs/${song.id}/edit`}>✏️</Link>
       </td>
     </tr>
   );

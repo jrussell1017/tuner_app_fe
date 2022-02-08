@@ -55,7 +55,6 @@ function SongNewForm() {
         <input
           id="album"
           type="text"
-          pattern="http[s]*://.+"
           required
           value={song.album}
           placeholder="Album Name..."
