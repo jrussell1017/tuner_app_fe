@@ -15,9 +15,10 @@ function Song({ song, id, handleDelete }) {
       <td>{song.album}</td>
       <td>{song.time}</td>
       <td>
-        <Link to={`/songs/${song.id}/edit`}>✏️</Link>
+        <Link to={`/songs/${song.id}/edit`}>🎤</Link> 
       </td>
       <td>
+      <span>&nbsp; &nbsp; &nbsp;</span>
         <button onClick={()=>handleDelete(id)}>Delete</button>
       </td>
     </tr>
