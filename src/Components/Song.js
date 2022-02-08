@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-function Song({ song }) {
+function Song({ song, id, handleDelete }) {
+  
   return (
     <tr>
       <td>
@@ -15,6 +16,9 @@ function Song({ song }) {
       <td>{song.time}</td>
       <td>
         <Link to={`/songs/${song.id}/edit`}>✏️</Link>
+      </td>
+      <td>
+        <button onClick={()=>handleDelete(id)}>Delete</button>
       </td>
     </tr>
   );

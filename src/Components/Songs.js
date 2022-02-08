@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 import Song from "./Song";
 
 const API = process.env.REACT_APP_API_URL;
 
 function Songs() {
   const [songs, setSong] = useState([]);
+  let navigate = useNavigate();
+  
   useEffect(() => {
     axios
       .get(`${API}/songs`)
@@ -17,6 +20,17 @@ function Songs() {
         throw err;
       });
   }, []);
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`${API}/songs/${id}`)
+      .then((res) => {
+        setSong(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="Songs">
@@ -33,7 +47,7 @@ function Songs() {
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <Song key={song.id} song={song} />;
+              return <Song key={song.id} song={song} id={song.id} handleDelete={handleDelete}/>;
             })}
           </tbody>
         </table>
