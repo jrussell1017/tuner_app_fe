@@ -43,6 +43,7 @@ function Songs() {
               <th>Album:</th>
               <th>Runtime (in minutes):</th>
               <th>View Song:</th>
+              <th id="delete-emoji">🚫</th>
             </tr>
           </thead>
           <tbody>
